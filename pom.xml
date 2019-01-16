@@ -14,7 +14,7 @@
     </parent>
     <groupId>com.agartha</groupId>
     <artifactId>filip-pet-clinic</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.2</version>
     <name>filip-pet-clinic</name>
     <description>Demo project for Spring Boot</description>
 
@@ -40,7 +40,7 @@
     </build>
     <scm>
         <developerConnection>scm:git:git@github.com:aminta5/filip-pet-clinic.git</developerConnection>
-      <tag>HEAD</tag>
+      <tag>filip-pet-clinic-0.0.2</tag>
   </scm>
 
 </project>
