@@ -1,11 +1,11 @@
 package com.agartha.filippetclinic.services.map;
 
 import com.agartha.filippetclinic.model.Vet;
-import com.agartha.filippetclinic.services.MyCrudService;
+import com.agartha.filippetclinic.services.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements MyCrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override
     public Set<Vet> findAll() {
