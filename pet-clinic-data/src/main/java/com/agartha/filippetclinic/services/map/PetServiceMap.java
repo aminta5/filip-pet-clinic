@@ -2,9 +2,10 @@ package com.agartha.filippetclinic.services.map;
 
 import com.agartha.filippetclinic.model.Pet;
 import com.agartha.filippetclinic.services.MyCrudService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
+@Service
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements MyCrudService<Pet, Long> {
 
     @Override
