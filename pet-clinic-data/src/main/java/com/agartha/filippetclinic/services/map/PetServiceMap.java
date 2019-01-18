@@ -20,7 +20,7 @@ public class PetServiceMap extends AbstractMapService<Pet, Long> implements MyCr
 
     @Override
     public Pet save(Pet var) {
-        return super.save(var.getId(), var);
+        return super.save(var);
     }
 
     @Override

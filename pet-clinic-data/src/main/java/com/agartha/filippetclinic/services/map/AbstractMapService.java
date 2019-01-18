@@ -1,13 +1,12 @@
 package com.agartha.filippetclinic.services.map;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import com.agartha.filippetclinic.model.BaseEntity;
 
-public abstract class AbstractMapService<T, ID> {
+import java.util.*;
 
-    protected Map<ID, T> map = new HashMap<>();
+public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> {
+
+    protected Map<Long, T> map = new HashMap<>();
     protected Set<T> findAll(){
         return new HashSet<>(map.values());
     }
@@ -15,8 +14,17 @@ public abstract class AbstractMapService<T, ID> {
     protected T findById(ID id){
         return map.get(id);
     }
-    protected T save(ID id, T object){
-        return map.put(id, object);
+    protected T save(T object){
+        if(object != null){
+            if(object.getId() == null){
+                object.setId(getNextId());
+            }
+            return map.put(object.getId(), object);
+        }
+        else if(object == null){
+            throw new RuntimeException(("Object cannot be null"));
+        }
+        return object;
     }
 
     protected void deleteById(ID id){
@@ -25,5 +33,15 @@ public abstract class AbstractMapService<T, ID> {
 
     protected void deleteByObject(T object){
         map.entrySet().removeIf( entry -> entry.getValue().equals(object));
+    }
+
+    private Long getNextId(){
+        Long nextId = null;
+        try{
+            nextId = Collections.max(map.keySet()) + 1;
+        }catch(NoSuchElementException e){
+            nextId = 1L;
+        }
+        return nextId;
     }
  }
