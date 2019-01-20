@@ -1,11 +1,13 @@
 package com.agartha.filippetclinic.services.map;
 
 import com.agartha.filippetclinic.model.Speciality;
-import com.agartha.filippetclinic.services.SpecialitiesService;
+import com.agartha.filippetclinic.services.SpecialityService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-public class SpecialityServiceMap extends AbstractMapService<Speciality, Long> implements SpecialitiesService {
+@Service
+public class SpecialityServiceMap extends AbstractMapService<Speciality, Long> implements SpecialityService {
     @Override
     public Set<Speciality> findAll() {
         return super.findAll();
