@@ -1,10 +1,20 @@
 package com.agartha.filippetclinic.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "visits")
 public class Visit extends BaseEntity{
+    @Column(name = "dates")
     private LocalDate date;
+
+    @Column(name = "description")
     private String description;
+
+    @Column(name = "pet")
     private Pet pet;
 
     public LocalDate getDate() {
