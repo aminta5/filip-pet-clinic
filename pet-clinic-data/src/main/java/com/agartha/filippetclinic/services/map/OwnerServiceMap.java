@@ -3,11 +3,13 @@ package com.agartha.filippetclinic.services.map;
 import com.agartha.filippetclinic.model.Owner;
 import com.agartha.filippetclinic.model.Pet;
 import com.agartha.filippetclinic.services.OwnerService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"defaul", "map"})
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     private final PetServiceMap petService;
