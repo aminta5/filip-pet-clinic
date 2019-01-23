@@ -2,9 +2,10 @@ package com.agartha.filippetclinic.services.map;
 
 import com.agartha.filippetclinic.model.Visit;
 import com.agartha.filippetclinic.services.VisitService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
+@Service
 public class VisitServiceMap extends AbstractMapService<Visit, Long> implements VisitService {
 
     @Override
@@ -19,8 +20,8 @@ public class VisitServiceMap extends AbstractMapService<Visit, Long> implements 
 
     @Override
     public Visit save(Visit visit) {
-        if(visit.getPet() == null || visit.getPet().getOwner() == null ||
-                visit.getPet().getId() == null || visit.getPet().getOwner().getId() == null){
+        if (visit.getPet() == null || visit.getPet().getOwner() == null ||
+                visit.getPet().getId() == null || visit.getPet().getOwner().getId() == null) {
             throw new RuntimeException("Invalid Visit");
         }
         return super.save(visit);

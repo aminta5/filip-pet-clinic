@@ -6,6 +6,7 @@ import com.agartha.filippetclinic.services.OwnerService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
+
 @Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
@@ -29,26 +30,24 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 
     @Override
     public Owner save(Owner owner) {
-        if(owner != null){
-            if(owner.getPets() != null){
+        if (owner != null) {
+            if (owner.getPets() != null) {
                 owner.getPets().forEach(pet -> {
-                    if(pet.getPetType() != null){
-                        if(pet.getPetType().getId() == null){
+                    if (pet.getPetType() != null) {
+                        if (pet.getPetType().getId() == null) {
                             pet.setPetType(petTypeService.save(pet.getPetType()));
                         }
-                    }
-                    else{
+                    } else {
                         throw new RuntimeException("Pet Type is required");
                     }
-                    if(pet.getId() == null){
+                    if (pet.getId() == null) {
                         Pet savedPet = petService.save(pet);
                         pet.setId(savedPet.getId());
                     }
                 });
             }
-            return  super.save(owner);
-        }
-        else{
+            return super.save(owner);
+        } else {
             return null;
         }
     }

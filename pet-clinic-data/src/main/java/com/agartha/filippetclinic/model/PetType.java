@@ -5,7 +5,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "type")
-public class PetType extends BaseEntity{
+public class PetType extends BaseEntity {
     private String name;
 
     public String getName() {

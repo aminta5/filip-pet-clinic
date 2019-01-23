@@ -12,7 +12,7 @@ import java.util.Set;
 
 @Service
 @Profile("springdatajpa")
-public class PetSDJpaService  implements PetService {
+public class PetSDJpaService implements PetService {
     private final PetRepository petRepository;
 
     public PetSDJpaService(PetRepository petRepository) {
@@ -22,7 +22,7 @@ public class PetSDJpaService  implements PetService {
     @Override
     public Set<Pet> findAll() {
         Set<Pet> pets = new HashSet<>();
-        petRepository.findAll().forEach(pets :: add);
+        petRepository.findAll().forEach(pets::add);
         return pets;
     }
 

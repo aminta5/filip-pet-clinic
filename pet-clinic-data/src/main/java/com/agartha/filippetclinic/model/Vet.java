@@ -6,7 +6,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "vet")
-public class Vet extends Person{
+public class Vet extends Person {
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "vet_specialities", joinColumns = @JoinColumn(name = "vet_id"), inverseJoinColumns = @JoinColumn(name = "speciality_id"))

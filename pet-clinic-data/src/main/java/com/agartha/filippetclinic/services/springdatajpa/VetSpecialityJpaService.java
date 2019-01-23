@@ -21,7 +21,7 @@ public class VetSpecialityJpaService implements SpecialityService {
     @Override
     public Set<Speciality> findAll() {
         Set<Speciality> specialities = new HashSet<>();
-        specialityRepository.findAll().forEach(specialities :: add);
+        specialityRepository.findAll().forEach(specialities::add);
         return specialities;
     }
 

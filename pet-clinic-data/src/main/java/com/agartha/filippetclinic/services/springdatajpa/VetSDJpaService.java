@@ -16,14 +16,14 @@ public class VetSDJpaService implements VetService {
     private final VetRepository vetRepository;
 
 
-    public VetSDJpaService(VetRepository vetRepository){
+    public VetSDJpaService(VetRepository vetRepository) {
         this.vetRepository = vetRepository;
     }
 
     @Override
     public Set<Vet> findAll() {
         Set<Vet> vets = new HashSet<>();
-        vetRepository.findAll().forEach(vets :: add);
+        vetRepository.findAll().forEach(vets::add);
         return vets;
     }
 
