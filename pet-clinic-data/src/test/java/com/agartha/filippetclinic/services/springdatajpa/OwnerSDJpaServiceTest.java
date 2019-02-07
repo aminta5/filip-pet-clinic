@@ -41,9 +41,6 @@ class OwnerSDJpaServiceTest {
     @Test
     void findByLastName() {
         Owner owner = Owner.builder().id(1L).lastName(LAST_NAME).build();
-        /*Owner owner = new Owner();
-        owner.setId(1L);
-        owner.setLastName(LAST_NAME);*/
         when(ownerRepository.findByLastName(any())).thenReturn(owner);
         Owner foundOwner = ownerSDJpaService.findByLastName(LAST_NAME);
         assertNotNull(foundOwner);
