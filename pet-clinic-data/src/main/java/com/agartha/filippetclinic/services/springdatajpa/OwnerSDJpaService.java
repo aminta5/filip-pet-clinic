@@ -46,12 +46,6 @@ public class OwnerSDJpaService implements OwnerService {
     @Override
     public Owner save(Owner var) {
 
-        System.out.println("########################################");
-        System.out.println("##########################################");
-        System.out.println("##########################################");
-        System.out.println("##########################################");
-
-
         return ownerRepository.save(var);
     }
 

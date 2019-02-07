@@ -13,13 +13,19 @@ class OwnerServiceMapTest {
 
     OwnerServiceMap ownerServiceMap;
 
+
     final Long ownerId = 1L;
     final String lastName = "Smith";
+
+    /*Owner owner = new Owner();
+    owner.setId(1L);
+    owner.setLastName("Smith");*/
+
 
     @BeforeEach
     void setUp() {
         ownerServiceMap = new OwnerServiceMap(new PetServiceMap(), new PetTypeMapService());
-        ownerServiceMap.save(Owner.builder().id(ownerId).lastName(lastName).build());
+        ownerServiceMap.save( Owner.builder().id(ownerId).lastName(lastName).build());
     }
 
     @Test

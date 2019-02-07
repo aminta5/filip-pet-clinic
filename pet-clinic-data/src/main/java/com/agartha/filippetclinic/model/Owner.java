@@ -10,7 +10,6 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Entity
 @Table(name = "owners")
 public class Owner extends Person {
@@ -36,7 +35,7 @@ public class Owner extends Person {
         this.pets = pets;
     }
 
-    public String getAddress() {
+    /*public String getAddress() {
         return address;
     }
 
@@ -66,5 +65,5 @@ public class Owner extends Person {
 
     public void setPets(Set<Pet> pets) {
         this.pets = pets;
-    }
+    }*/
 }
