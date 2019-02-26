@@ -84,7 +84,8 @@ public class PetController {
 
     @GetMapping("/pets/{petId}/edit")
     public String initUpdateForm(@PathVariable Long petId, Model model){
-        model.addAttribute("pet", petService.findById(petId));
+        Pet pet = petService.findById(petId);
+        model.addAttribute("pet", pet);
         return VIEWS_PET_CREATE_OR_UPDATE_FORM;
     }
 
