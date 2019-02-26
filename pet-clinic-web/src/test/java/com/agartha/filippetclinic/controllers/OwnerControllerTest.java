@@ -119,7 +119,7 @@ class OwnerControllerTest {
     }
 
     @Test
-    void processCrationForm()throws Exception {
+    void processCreationForm()throws Exception {
         when(ownerService.save(ArgumentMatchers.any())).thenReturn(Owner.builder().id(1L).build());
 
         mockMvc.perform(post("/owners/new"))
